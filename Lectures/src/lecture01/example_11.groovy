@@ -16,7 +16,8 @@ class Card
         this.card = card
         this.suit = suit
         this.position = 1 << this.valid_card.indexOf(this.card) 
-        println 1 << this.valid_card.indexOf(this.card) 
+        println 1 << this.valid_card.indexOf(this.card) + 
+        ((this.valid_suit.indexOf(this.suit) - 1 ) * 8 )+ 3
         println "creating card: " + this.card + this.suit + " - " + this.position
         
         
