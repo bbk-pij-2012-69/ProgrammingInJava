@@ -1,29 +1,47 @@
 package lecture03
 java.util.Scanner sc = new java.util.Scanner(System.in);
-class Point {
-    double x;
-    double y;
+print "Please enter you string: "
+String original_line = sc.nextLine().toString()
+StringBuilder sb = new StringBuilder()
 
-    def Point(double x, double y)
+for(def i = 0; i < original_line.length(); ++i)
+{
+    char character = original_line.charAt(i)
+    if(character.isLetter())
     {
-        this.x = x
-        this.y = y
+        sb.append(character)
+    }
+}
+String line = sb.toString().toLowerCase()
+
+palindrom = false
+
+if(line.size() % 2 == 1)
+{
+    int half = (line.size() / 2) + 1 
+    StringBuilder stringBuilder = new StringBuilder(line.substring(0,half))
+
+    String reverse = stringBuilder.reverse().toString()
+    String sub = line.substring(half - 1 ,line.size()).toString()
+    if (sub.equals(reverse))
+    {
+        palindrom = true
+    }
+}
+else
+{
+    int half = line.size() / 2
+    StringBuilder stringBuilder = new StringBuilder(line.substring(0,half))
+    
+    String reverse = stringBuilder.reverse().toString()
+    String sub = line.substring(half,line.size()).toString()
+    if (sub.equals(reverse))
+    {
+        palindrom = true
     }
 }
 
-int numPoints = 3
-def points = []
-for(def i = 0; i < numPoints; ++i){
-    print "Please enter x/y coordinates for point: "
-    def x = sc.next() as double
-    def y = sc.next() as double
-    points.add(new Point(x, y))
-}
-
-for(def i = 0; i < points.size(); ++i){
-    for(def j = 0; j < points.size(); ++j){
-
-
-
-    }
-}
+if (palindrom)
+    println original_line + " IS a relaxed palindrome."
+else
+    println original_line + " is NOT a relaxed palindrome."

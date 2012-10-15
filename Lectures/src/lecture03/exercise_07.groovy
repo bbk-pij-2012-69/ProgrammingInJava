@@ -1,4 +1,4 @@
-package lecture02
+package lecture03
 java.util.Scanner sc = new java.util.Scanner(System.in);
 print "Please enter you string: "
 def line = sc.nextLine() as String
