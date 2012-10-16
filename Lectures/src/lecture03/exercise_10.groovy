@@ -29,7 +29,7 @@ for(def i = 0; i < points.size(); ++i){
         if(shortestPair.size() == 1)
             shortestPair.add(points[j])
         else
-            
+            print "foo"
         
         
 
