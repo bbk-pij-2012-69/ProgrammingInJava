@@ -72,7 +72,7 @@ public class IntegerTreeNode {
 		return this.toString(false);
 	}
 	
-	public String toString(boolean child){
+	private String toString(boolean child){
 		String val = String.valueOf(this.value) + " L[" + ((this.left == null) ? "" : this.left.toString(true)) + "] R[" + ((this.right == null) ? "" : this.right.toString(true)) + "]";
 		
 		if(child){ 
@@ -83,4 +83,23 @@ public class IntegerTreeNode {
 		}
 	}
 
+	public int depth()
+	{
+		int left_depth = depth(this.left);
+		int right_depth = depth(this.right);
+		return (left_depth >= right_depth) ? left_depth : right_depth;
+	}
+	
+	private int depth(IntegerTreeNode node)
+	{
+		if(node == null)
+		{
+			return 0;
+		}
+			
+		int left_depth = depth(node.left);
+		int right_depth = depth(node.right);
+		return (left_depth >= right_depth) ? left_depth + 1 : right_depth + 1;
+	}
+	
 }

@@ -5,6 +5,7 @@ public class run {
 	 */
 	public static void main(String[] args) {
 		
+		// Initial test of add
 		IntegerTreeNode itn = new IntegerTreeNode(3);
 
 		itn.add(4);
@@ -34,25 +35,44 @@ public class run {
 		itn.add(144);
 		itn.add(57);
 		
+		// Test getMax/getMin
 		System.out.println("Max: " + itn.getMax());
 		System.out.println("Min: " + itn.getMin());
-		
 		itn = null;
 				
+		// Test toString
 		itn = new IntegerTreeNode(6);
-		System.out.println("Min: " + itn.toString());
+		System.out.println("toString:" + itn.toString());
 
 		itn.add(9);
-		System.out.println("Min: " + itn.toString());
+		System.out.println("toString: " + itn.toString());
 		
 		itn.add(5);
 		itn.add(3);
-		System.out.println("Min: " + itn.toString());
+		System.out.println("toString: " + itn.toString());
 
 		itn.add(8);
 		itn.add(11);
 		itn.add(12);
-		System.out.println("Min: " + itn.toString());
+		System.out.println("toString: " + itn.toString());
+		itn = null;
+		
+		// Test depth
+		itn = new IntegerTreeNode(6);
+		System.out.println("depth: " + itn.depth());
+
+		itn.add(9);
+		System.out.println("depth: " + itn.depth());
+
+		itn.add(5);
+		itn.add(3);
+		System.out.println("depth: " + itn.depth());
+		
+		itn.add(8);
+		itn.add(11);
+		itn.add(12);
+		System.out.println("depth: " + itn.depth());
+		
 	}
 
 }
