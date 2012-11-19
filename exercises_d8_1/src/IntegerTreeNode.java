@@ -67,4 +67,20 @@ public class IntegerTreeNode {
 			return this.left.getMin();
 		}
 	}
+
+	public String toString(){
+		return this.toString(false);
+	}
+	
+	public String toString(boolean child){
+		String val = String.valueOf(this.value) + " L[" + ((this.left == null) ? "" : this.left.toString(true)) + "] R[" + ((this.right == null) ? "" : this.right.toString(true)) + "]";
+		
+		if(child){ 
+			return val;
+		}
+		else{
+			return "[" + val + "]";
+		}
+	}
+
 }

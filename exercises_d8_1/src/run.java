@@ -37,6 +37,22 @@ public class run {
 		System.out.println("Max: " + itn.getMax());
 		System.out.println("Min: " + itn.getMin());
 		
+		itn = null;
+				
+		itn = new IntegerTreeNode(6);
+		System.out.println("Min: " + itn.toString());
+
+		itn.add(9);
+		System.out.println("Min: " + itn.toString());
+		
+		itn.add(5);
+		itn.add(3);
+		System.out.println("Min: " + itn.toString());
+
+		itn.add(8);
+		itn.add(11);
+		itn.add(12);
+		System.out.println("Min: " + itn.toString());
 	}
 
 }
