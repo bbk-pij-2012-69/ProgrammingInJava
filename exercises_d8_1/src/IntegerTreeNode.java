@@ -21,9 +21,19 @@ public class IntegerTreeNode {
 		return this.right;
 	}
 	
+	public void setRight(IntegerTreeNode node)
+	{
+		this.right = node;
+	}
+	
 	public IntegerTreeNode getLeft()
 	{
 		return this.left;
+	}
+	
+	public void setLeft(IntegerTreeNode node)
+	{
+		this.left = node;
 	}
 	
 	public void add(int newNumber){
@@ -141,18 +151,7 @@ public class IntegerTreeNode {
 		return (left_depth >= right_depth) ? left_depth + 1 : right_depth + 1;
 	}
 	
-	public void remove(int val){
-		if(val < this.value && this.left != null)
-		{
-			this.left.remove(val, this);
-		}
-		else if(val > this.value && this.right != null)
-		{
-			this.right.remove(val, this);
-		}
-	}
-	
-	private void remove(int val, IntegerTreeNode parent)
+	public void remove(int val, IntegerTreeNode parent)
 	{
 
 		if(val < this.value && this.left != null)
@@ -167,7 +166,7 @@ public class IntegerTreeNode {
 		{
 			if(this.left != null && this.right != null)
 			{
-				this.value = this.right.minValue();
+				this.value = this.right.getMin();
 				this.right.remove(this.value, this);
 			}
 			else if(parent.left == this)
@@ -181,12 +180,10 @@ public class IntegerTreeNode {
 		}
 	}
 	
-    private int minValue() {
-        if (this.left == null)
-              return this.value;
-        else
-              return this.left.minValue();
-    }
-	
+	public void rebalance()
+	{
+		// TODO - Implement rebalance
+	}
+
 	
 }

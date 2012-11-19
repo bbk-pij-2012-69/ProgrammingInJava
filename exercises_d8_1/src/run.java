@@ -10,6 +10,8 @@ public class run {
 		test_to_string();
 		test_depth();
 		test_deletion();
+		itn = test();
+		balance(itn);
 	}
 	
 	public static IntergerTree test(){
@@ -29,7 +31,6 @@ public class run {
 		itn.add(214);
 		itn.add(8);
 		itn.add(6);
-		itn.add(3);
 		itn.add(45);
 		itn.add(9);
 		itn.add(123);
@@ -41,8 +42,18 @@ public class run {
 		itn.add(12);
 		itn.add(144);
 		itn.add(57);
+		itn.add(7);
 		
 		return itn;
+	}
+	
+	public static void balance(IntergerTree itn){
+		// Test of rebalance
+		// TODO - Implemen rebalanace
+		System.out.println("toString: " + itn.toString());	
+		itn.rebalance();
+		System.out.println("toString: " + itn.toString());	
+		
 	}
 	
 	public static void test_max_min(IntergerTree itn)

@@ -1,4 +1,3 @@
-
 public class IntergerTree {
 	private IntegerTreeNode root = null;
 	
@@ -34,11 +33,16 @@ public class IntergerTree {
 		
 		if(val == this.root.getValue())
 		{
-			IntegerTreeNode tmp = this.root.getRight();
-			this.root = this.root.getLeft();
-			this.root.add(tmp);
+			IntegerTreeNode tmp = new IntegerTreeNode(0);
+			tmp.setLeft(this.root);
+			this.root.remove(val, tmp);
+			this.root = tmp.getLeft();
 		}
-		else root.remove(val);
+		else this.root.remove(val, null);
+	}
+	
+	public void rebalance(){
+		this.root.rebalance();
 	}
 
 }
