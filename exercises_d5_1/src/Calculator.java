@@ -17,7 +17,7 @@ public class Calculator {
 	
 	public static void divide(int x, int y)
 	{
-		System.out.println(x / y);
+		System.out.println(new Double(x) / new Double(y));
 	}
 	
 	public static void modulus(int x, int y)
