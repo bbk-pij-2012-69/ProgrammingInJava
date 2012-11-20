@@ -16,7 +16,7 @@ public class run {
 	
 	public static IntegerTreeNode test(){
 		// Initial test of add
-		IntergerTree itn = new IntergerTree(3);
+		IntegerTreeNode itn = new IntegerTreeNode(3);
 		itn.add(4);
 		itn.add(14);
 		itn.add(34);
@@ -106,13 +106,13 @@ public class run {
 	
 		// Test deletion
 		IntegerTreeNode itn = new IntegerTreeNode(6);
+
 		itn.add(9);
 		itn.add(5);
 		itn.add(3);
 		System.out.println("toString: " + itn.toString());
-
 		itn.remove(6);
-		System.out.println("toString: " + itn.toString());
+		System.out.println("del toString: " + itn.toString());
 		itn = null;
 
 		itn = new IntegerTreeNode(6);
@@ -124,15 +124,15 @@ public class run {
 		itn.add(12);
 		System.out.println("toString: " + itn.toString());
 		itn.remove(9);
-		System.out.println("toString: " + itn.toString());
+		System.out.println("del toString: " + itn.toString());
 		itn.remove(3);
-		System.out.println("toString: " + itn.toString());
+		System.out.println("del toString: " + itn.toString());
 		itn.remove(12);
-		System.out.println("toString: " + itn.toString());
+		System.out.println("del toString: " + itn.toString());
 		itn.remove(6);
-		System.out.println("toString: " + itn.toString());
+		System.out.println("del toString: " + itn.toString());
 		itn.remove(6);
-		System.out.println("toString: " + itn.toString());
+		System.out.println("del toString: " + itn.toString());
 		
 		
 	}

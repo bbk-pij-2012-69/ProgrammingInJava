@@ -151,7 +151,17 @@ public class IntegerTreeNode {
 		return (left_depth >= right_depth) ? left_depth + 1 : right_depth + 1;
 	}
 	
-	public void remove(int val, IntegerTreeNode parent)
+	public void remove(int val)
+	{
+		if(val == this.value)
+		{
+			this.value = this.right.getMin();
+			this.remove(this.value, this);
+		}
+		else remove(val, this);
+	}
+	
+	private void remove(int val, IntegerTreeNode parent)
 	{
 
 		if(val < this.value && this.left != null)
