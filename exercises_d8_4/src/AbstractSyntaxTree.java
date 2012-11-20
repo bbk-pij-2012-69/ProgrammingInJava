@@ -7,6 +7,9 @@ public class AbstractSyntaxTree {
 	
 	public AbstractSyntaxTree(String expression)
 	{
+		
+		//TODO - Split Expression.
+		//TODO - How do we work out what the root is?
 		this.expression = expression;
 		this.sanitised_expr = expression.replace(" ", "");
 		this.left = null;

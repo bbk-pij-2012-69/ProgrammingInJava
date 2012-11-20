@@ -5,7 +5,7 @@ public class run {
 	 */
 	public static void main(String[] args) {
 
-		IntergerTree itn = test();
+		IntegerTreeNode itn = test();
 		test_max_min(itn);
 		test_to_string();
 		test_depth();
@@ -14,7 +14,7 @@ public class run {
 		balance(itn);
 	}
 	
-	public static IntergerTree test(){
+	public static IntegerTreeNode test(){
 		// Initial test of add
 		IntergerTree itn = new IntergerTree(3);
 		itn.add(4);
@@ -47,7 +47,7 @@ public class run {
 		return itn;
 	}
 	
-	public static void balance(IntergerTree itn){
+	public static void balance(IntegerTreeNode itn){
 		// Test of rebalance
 		// TODO - Implemen rebalanace
 		System.out.println("toString: " + itn.toString());	
@@ -56,7 +56,7 @@ public class run {
 		
 	}
 	
-	public static void test_max_min(IntergerTree itn)
+	public static void test_max_min(IntegerTreeNode itn)
 	{
 		// Test getMax/getMin
 		System.out.println("Max: " + itn.getMax());
@@ -66,7 +66,7 @@ public class run {
 
 	public static void test_to_string(){
 		// Test toString
-		IntergerTree itn = new IntergerTree(6);
+		IntegerTreeNode itn = new IntegerTreeNode(6);
 		System.out.println("toString:" + itn.toString());
 
 		itn.add(9);
@@ -85,7 +85,7 @@ public class run {
 	
 	public static void test_depth(){
 		// Test depth
-		IntergerTree itn = new IntergerTree(6);
+		IntegerTreeNode itn = new IntegerTreeNode(6);
 		System.out.println("depth: " + itn.depth());
 
 		itn.add(9);
@@ -105,7 +105,7 @@ public class run {
 	public static void test_deletion(){
 	
 		// Test deletion
-		IntergerTree itn = new IntergerTree(6);
+		IntegerTreeNode itn = new IntegerTreeNode(6);
 		itn.add(9);
 		itn.add(5);
 		itn.add(3);
@@ -115,7 +115,7 @@ public class run {
 		System.out.println("toString: " + itn.toString());
 		itn = null;
 
-		itn = new IntergerTree(6);
+		itn = new IntegerTreeNode(6);
 		itn.add(9);
 		itn.add(5);
 		itn.add(3);
