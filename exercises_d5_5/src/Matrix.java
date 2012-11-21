@@ -2,9 +2,11 @@
 public class Matrix {
 	private int[][] array;
 	private int width, height;
+	private MatrixChecker checker; 
 	
 	public Matrix(int width, int height)
 	{
+		this.checker = new MatrixChecker();
 		this.width = width;
 		this.height = height;
 		this.array = new int[this.height][this.width];
@@ -79,5 +81,18 @@ public class Matrix {
 		String[] row_values = values.split(";");
 		for(int i = 0; i < row_values.length; ++i)
 			this.setRow(i, row_values[i]);
+	}
+	
+	public void checkMatrix()
+	{
+		if(this.checker.isSymmetrical(this.array))
+			System.out.println("Matrix is Symmetrical");
+		else
+			System.out.println("Matrix is NOT Symmetrical");
+
+		if(this.checker.isTriangular(this.array))
+			System.out.println("Matrix is Triangular");
+		else
+			System.out.println("Matrix is NOT Triangular");
 	}
 }
