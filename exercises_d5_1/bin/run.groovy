@@ -1,0 +1,5 @@
+Calculator.add(1,2)
+Calculator.subtract(1,2)
+Calculator.multiply(1,2)
+Calculator.divide(1,2)
+Calculator.modulus(1,2)
