@@ -1,5 +1,5 @@
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -27,7 +27,7 @@ public class HashUtilities {
 			int randVal = Math.round(Math.round(Math.random() * 1024));
 			//System.out.println("Checking: " + randVal);
 			int result = HashUtilities.shortHash(randVal);
-			assertEquals("Result", true, result > 0 && result < 1000);
+			assertTrue(result > 0 && result < 1000);
 		}
 	}	
 }
