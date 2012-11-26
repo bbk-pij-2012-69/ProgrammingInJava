@@ -3,7 +3,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-
 public class HashUtilities {
 
 	public static int shortHash(int value)
@@ -31,5 +30,4 @@ public class HashUtilities {
 			assertEquals("Result", true, result > 0 && result < 1000);
 		}
 	}	
-	
 }

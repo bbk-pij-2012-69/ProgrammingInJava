@@ -9,7 +9,7 @@ public class run {
 	 */
 	public static void main(String[] args) {
 		int fail = 0;
-		Result result = JUnitCore.runClasses(HashUtilities.class);
+		Result result = JUnitCore.runClasses(TestSuite.class);
 		
 		for(Failure failure : result.getFailures())
 		{
