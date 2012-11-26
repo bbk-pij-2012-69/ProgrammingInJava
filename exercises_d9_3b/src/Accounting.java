@@ -18,49 +18,65 @@ public class Accounting {
 	 * The first element of the list of bills
 	 */
 	private Bill firstBill = null;
-	private boolean testing = false;
-	private int billCount = 0;
-	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws NumberFormatException, IOException {
 		Accounting acc = new Accounting();
 		acc.launch(args);
 	}
-	
+
 	private String readLine() throws IOException
 	{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String value = br.readLine();
 		return value;
 	}
-	private void launch(String[] args) throws IOException {
+
+	
+	private void printSummary(){
+		int count = 0;
+		int totalDebt = 0;
+
+		for (Bill current = firstBill; current != null; current = current.getNextBill()) {
+			count++;
+			totalDebt += current.getAmount();
+
+		}
+		System.out.println("You have " + count + " bills unpaid (total debt: " + totalDebt + ")");
+	}
+
+	private String getConcept() throws IOException{
+		System.out.print(" Concept: ");
+		return this.readLine();
+	}
+
+	private int getAmount() throws NumberFormatException, IOException{
+		System.out.print(" Concept: ");
+		return Integer.parseInt(this.readLine());
+	}
+	
+	
+	private void launch(String[] args) throws NumberFormatException, IOException {
 		String concept = "";
 		int amount = 0;
 		do {
 			System.out.println("What’s your next bill (type \"END\" to finish)?");
-			System.out.print(" Concept: ");
-			concept = this.readLine();
-			
+			concept = getConcept();
 			if (!concept.equals("END")) {
-				if(this.testing) ++billCount;
-				
 				System.out.print(" Amount: ");
-				String strAmount = this.readLine();
-				amount = Integer.parseInt(strAmount);
-				Bill newBill = new Bill(concept, amount);
-				addBillToList(newBill);
+				amount = getAmount() ;
 			}
+			addBillToList(concept, amount);
 		} while (!concept.equals("END"));
 		
-		int count = 0;
-		int totalDebt = 0;
-		for (Bill current = firstBill; current != null; current = current.getNextBill()) {
-			count++;
-			totalDebt += current.getAmount();
-		}
-		System.out.println("You have " + count + " bills unpaid (total debt: " + totalDebt + ")");
+		this.printSummary();
 	}
 	
-	private void addBillToList(Bill bill) {
+	
+	private void addBillToList(String concept, int amount) {
+		if(concept == "END")
+			return;
+		
+		Bill bill = new Bill(concept, amount);
+
 		if (firstBill == null) {
 			firstBill = bill;
 			return;
@@ -76,18 +92,22 @@ public class Accounting {
 		return;
 	}
 
+
 	@Test
 	public void testLaunch() throws IOException
 	{
-		testing = true;
-		this.launch(new String[1]);
+		int billCount = 2;
 		
+		this.addBillToList("Dentist", 61);
+		this.addBillToList("MOT", 55);
+		this.addBillToList("END", 0);
+
 		int count = 0;
 		for (Bill current = firstBill; current != null; current = current.getNextBill()) {
 			count++;
 		}
-		
-		assertEquals(count, this.billCount);
+
+		assertEquals(count, billCount);
 
 	}
 
